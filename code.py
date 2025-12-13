@@ -30,12 +30,12 @@ def read_picture_file(picture_file):
         return "your picture should be in P3 PPM format"
 
     try:
-        width = int(info[1])
-        height = int(info[2])
+        picture_width = int(info[1])
+        picture_height = int(info[2])
     except:
         return None, None, None,None, "invalid dimensions"
 
-    if width<=0 or height <=0:
+    if picture_width<=0 or picture_height <=0:
         return None,None,None,None, "invalid dimensions"
 
     try:
@@ -52,6 +52,22 @@ def read_picture_file(picture_file):
 
     if len(pixels) % 3 != 0:
         return None,None,None,None, "pixel values are incomplete"
+
+    return pixels,picture_width, picture_height, max_colour_intensity, None
+
+def save_pic_info(filename,pixels,picture_width,picture_height,max_colour_intensity):
+    file = open(filename,"w")
+    file.write("P3\n")
+    file.write(str(picture_width) +"\n")
+    file.write(str(picture_height) + "\n")
+    file.write(str(max_colour_intensity)+"\n")
+
+    for v in pixels:
+        file.write(str(v) + "")
+    
+    file.close()
+
+
 
 
 
