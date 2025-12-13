@@ -51,4 +51,26 @@ def encoding():
 
     message_bits = ""
 
+    for b in message_bytes:
+        message_bits+= byte_to_bits(b)
+
+    all_bits = bit_length+message_bits
+
+    pointer_bit = 0
+
+    for i in range(len(pixels)):
+        if pointer_bit>len(all_bits):
+            break
+
+        if all_bits[pointer_bit] == "0":
+            if pixels[i]%2 == 1:
+                pixels[i]-=1
+        else:
+            if pixels%2==0:
+                pixels[i]+=1
+        
+        pointer_bit+=1
+
+        
+
     
