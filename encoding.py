@@ -71,6 +71,10 @@ def encoding():
         
         pointer_bit+=1
 
-        
+    final_picture = input("enter final modified picture name")
+
+    save_pic_info(final_picture,pixels,picture_width,picture_height,max_colour_intensity)
+
+    print("message has been hidden")
 
     
