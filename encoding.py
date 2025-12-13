@@ -67,7 +67,10 @@ def encoding():
                 pixels[i]-=1
         else:
             if pixels%2==0:
-                pixels[i]+=1
+                if pixels[i] == max_colour_intensity:
+                    pixels[i]-=1
+                else:
+                    pixels[i]+=1
         
         pointer_bit+=1
 
