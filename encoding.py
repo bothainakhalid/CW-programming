@@ -59,7 +59,7 @@ def encoding():
     pointer_bit = 0
 
     for i in range(len(pixels)):
-        if pointer_bit>len(all_bits):
+        if pointer_bit>=len(all_bits):
             break
 
         if all_bits[pointer_bit] == "0":
