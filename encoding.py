@@ -8,5 +8,47 @@ def encoding():
     picture_height = result[2]
     max_colour_intensity = result[3]
     error = result [4]
-    
 
+    if error:
+        print(error)
+        return
+
+    input_method = input("choose your text input method \n1)type your secret message\n2)import your message using external file")
+    if input_method == "1":
+        message=input("enter the message you want to hide")
+    
+    elif input_method == "2":
+        message_file = input("enter your message file name")
+        try:
+            file = open(message_file,"r")
+            message = file.read()
+            file.close()
+        except:
+            print("message file doesn't exist")
+            return
+    
+    else:
+        print("please choose 1 or 2 ")
+
+    if message == "":
+        print("message can't be empty")
+        return
+
+    message_bytes=[]
+
+    for m in message_bytes:
+        message_bytes.append(ord(m))
+    
+    message_length = len(message_bytes)
+
+    bits_needed = 32 + message_length*8
+
+    if bits_needed>len(pixels):
+        print("message is too long")
+        return
+
+    bit_length = len_to_bits(message_length)
+
+    message_bits = ""
+
+    
