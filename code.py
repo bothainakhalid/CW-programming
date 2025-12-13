@@ -67,6 +67,14 @@ def save_pic_info(filename,pixels,picture_width,picture_height,max_colour_intens
     
     file.close()
 
+def len_to_bits(n):
+    bits = ""
+    for i in range(31,-1,-1):
+        bits += str((n >> i) &1)
+    return bits
+
+
+
 
 
 
