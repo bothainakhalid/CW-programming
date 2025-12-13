@@ -73,7 +73,19 @@ def len_to_bits(n):
         bits += str((n >> i) &1)
     return bits
 
+def byte_to_bits(b):
+    bits = ""
+    for i in range(7,-1,-1):
+        bits += str((b >> i) &1)
+    return bits
 
+def bin_to_int(bits):
+    n = 0
+    for i in bits:
+        n = n *2 + int(bit)
+
+    return n
+    
 
 
 
