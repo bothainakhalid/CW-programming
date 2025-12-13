@@ -1,5 +1,5 @@
 def read_picture_file(picture_file):
-     try: 
+    try: 
         file = open(picture_file, "r")
     except:
         return None,None,None,None, "this file does not exist"
