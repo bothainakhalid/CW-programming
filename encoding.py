@@ -36,7 +36,7 @@ def encoding():
 
     message_bytes=[]
 
-    for m in message_bytes:
+    for m in message:
         message_bytes.append(ord(m))
     
     message_length = len(message_bytes)
