@@ -47,8 +47,10 @@ def read_picture_file(picture_file):
     pixels = []
 
     for v in pixel_values:
-        if v.isdigit():
+        if v.isdigit() and int(v) <= 255:
             pixels.append(int(v))
+        else:
+            return None,None,None,None,"invalid pixel value"
 
     if len(pixels) % 3 != 0:
         return None,None,None,None, "pixel values are incomplete"

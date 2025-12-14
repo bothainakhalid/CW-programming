@@ -1,7 +1,7 @@
 from functions import read_picture_file,bin_to_int
 
 def decoding():
-    picture_file = print("enter the name of the picture file you want to decode")
+    picture_file = input("enter the name of the picture file you want to decode")
     result = read_picture_file(picture_file)
     pixels = result [0]
     picture_width=result[1]
